@@ -66,5 +66,13 @@ public class Questao
         }
     }
 
+    private Button Qualbtn(int RR)
+    {
+        if (RR == 1)
+          return btnResposta01;
+        else if (RR == 2)
+          return btnResposta02;
+    }
+
 
 }
