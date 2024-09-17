@@ -54,7 +54,7 @@ public class Questao
 
     public bool VerificaResposta(int RR)
     {
-        if (RespostaRespondida == RR)
+        if (respostacorreta == RR)
         {
             var btn = Qualbtn (RR);
                 btn.BackgroundColor = Colors.Green;
@@ -62,10 +62,10 @@ public class Questao
         }
         else
         {
-            var botao = Qualbtn (respostacorreta);
-            var botaoincorreto = Qualbtn (RR);
-            btn.BackgroundColor = Colors.Yellow;
-            btn.ForegroundColor = Colors.Red;
+            var btnCorreto = Qualbtn (respostacorreta);
+            var btnIncorreto = Qualbtn (RR);
+            btnCorreto.BackgroundColor = Colors.Yellow;
+            btnIncorreto.BackgroundColor = Colors.Red;
 
             return false;
         }
@@ -73,10 +73,23 @@ public class Questao
 
     private Button Qualbtn(int RR)
     {
-        else if (RR == 1)
+        if (RR == 1)
           return btnResposta01;
+
         else if (RR == 2)
           return btnResposta02;
+        
+        else if (RR == 3)
+           return btnResposta03;
+        
+        else if (RR == 4)
+           return btnResposta04;
+
+        else if (RR == 5)
+           return btnResposta05;
+
+        else 
+        return null;
     }
 
 
