@@ -5,15 +5,15 @@ public class Questao
 
     }
     public string pergunta { get; set; }
-    public string resposta1 { get; set; }
-    public string resposta2 { get; set; }
-    public string resposta3 { get; set; }
-    public string resposta4 { get; set; }
-    public string resposta5 { get; set; }
+    public string resposta01 { get; set; }
+    public string resposta02 { get; set; }
+    public string resposta03 { get; set; }
+    public string resposta04 { get; set; }
+    public string resposta05 { get; set; }
     public int respostacorreta { get; set; }
     public int nivelpergunta { get; set; }
 
-    public void desenhar()
+    public void Desenhar()
     {
       labelPergunta.Text = pergunta;
       btnResposta01.Text = resposta1;
