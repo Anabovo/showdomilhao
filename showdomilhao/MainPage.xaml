@@ -8,10 +8,9 @@
     <Grid>
         <Image Source="moneyquestions.png"
                Aspect="AspectFill">
-               </Image>
+            </Image>
 
 
-        <!-- Botão verde na parte inferior -->
         <Button Text="Iniciar"
                 FontSize="20"
                 BackgroundColor="#90c567"

@@ -16,11 +16,11 @@ public class Questao
     public void Desenhar()
     {
       labelPergunta.Text = pergunta;
-      btnResposta01.Text = resposta1;
-      btnResposta02.Text = resposta2;
-      btnResposta03.Text = resposta3;
-      btnResposta04.Text = resposta4;
-      btnResposta05.Text = resposta5;
+      btnResposta01.Text = resposta01;
+      btnResposta02.Text = resposta02;
+      btnResposta03.Text = resposta03;
+      btnResposta04.Text = resposta04;
+      btnResposta05.Text = resposta05;
     }
 
     private Label labelPergunta; 

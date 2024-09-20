@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="showdomilhao.TelaPergunta"
              Shell.NavBarIsVisible="False"
-             BackgroundColor="#daf793">
+             BackgroundColor="#185001">
 
 
  <Grid>
@@ -52,7 +52,8 @@
                 CornerRadius="15"
                 Grid.Row="2"
                 Grid.Column="0"
-                Grid.ColumnSpan="3"/>
+                Grid.ColumnSpan="3"
+                Clicked="Resposta01Clicado"/>
 
         <Button x:Name="Resposta02"
                 Margin="5,10,5,0"
@@ -62,7 +63,8 @@
                 CornerRadius="15"
                 Grid.Row="3"
                 Grid.Column="0"
-                Grid.ColumnSpan="3"/>
+                Grid.ColumnSpan="3"
+                Clicked="Resposta02Clicado"/>
 
         <Button x:Name="Resposta03"
                 Margin="5,10,5,0"
@@ -72,7 +74,8 @@
                 CornerRadius="15"
                 Grid.Row="4"
                 Grid.Column="0"
-                Grid.ColumnSpan="3"/>
+                Grid.ColumnSpan="3"
+                Clicked="Resposta03Clicado"/>
         
         <Button x:Name="Resposta04"
                 Margin="5,10,5,0"
@@ -82,7 +85,8 @@
                 CornerRadius="15"
                 Grid.Row="5"
                 Grid.Column="0"
-                Grid.ColumnSpan="3"/>
+                Grid.ColumnSpan="3"
+                Clicked="Resposta04Clicado"/>
 
         <Button x:Name="Resposta05"
                 Margin="5,10,5,7"
@@ -92,7 +96,8 @@
                 CornerRadius="15"
                 Grid.Row="6"
                 Grid.Column="0"
-                Grid.ColumnSpan="3"/>
+                Grid.ColumnSpan="3"
+                Clicked="Resposta05Clicado"/>
 
         <Button x:Name="Ajuda01"
                 Text="Cartas"

@@ -2,8 +2,16 @@
 
 public partial class TelaPergunta : ContentPage
 {
+	Gerenciador gerenciador;
 	public TelaPergunta()
 	{
 		InitializeComponent();
+
+		gerenciador = new Gerenciador(Perguntas, Resposta01, Resposta02, Resposta03, Resposta04, Resposta05);
+	}
+	
+	void Resposta01Clicado(object sender, EventArgs e)	
+	{
+		gerenciador.VerificaResposta(1);
 	}
 }

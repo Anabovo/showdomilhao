@@ -12,15 +12,17 @@ public class Gerenciador
     void CriaPerguntas(Label LabelPerg, Button btnResposta01, Button btnResposta02, Button btnResposta03, Button btnResposta04, Button btnResposta05) 
     {
         var Q1 = new Questao();
-        Q1.ConfigurarDesenho(LabelPerg, btnResposta01, btnResposta02, btnResposta03, btnResposta04, btnResposta05);
+        Q1.ConfigurarEstruturaDesenho(LabelPerg, btnResposta01, btnResposta02, btnResposta03, btnResposta04, btnResposta05);
         Q1.pergunta = "Quanto é 2+2";
         Q1.resposta01 = "2";
         Q1.resposta02 = "22";
         Q1.resposta03 = "4";
-        Q1.resposta04 = "sim";
+        Q1.resposta04 = "SIM";
         Q1.resposta05 = "1";
         Q1.respostacorreta= 3;
         ListaQuestoes.Add(Q1);
+
+        ProximaQuestao();
 
     }
 
@@ -28,7 +30,7 @@ public class Gerenciador
     {
         if (QuestaoCorrente.VerificaResposta(RR))
         {
-            await TaskDelay(1000);
+            await Task.Delay(1000);
             ProximaQuestao();
         }
     }
