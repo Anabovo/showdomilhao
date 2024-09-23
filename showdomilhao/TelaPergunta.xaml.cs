@@ -17,22 +17,22 @@ public partial class TelaPergunta : ContentPage
 
 	void Resposta02Clicado(object sender, EventArgs e)	
 	{
-		gerenciador.VerificaResposta(1);
+		gerenciador.VerificaResposta(2);
 	}
 
 	void Resposta03Clicado(object sender, EventArgs e)	
 	{
-		gerenciador.VerificaResposta(1);
+		gerenciador.VerificaResposta(3);
 	}
 
 	void Resposta04Clicado(object sender, EventArgs e)	
 	{
-		gerenciador.VerificaResposta(1);
+		gerenciador.VerificaResposta(4);
 	}
 
 	void Resposta05Clicado(object sender, EventArgs e)	
 	{
-		gerenciador.VerificaResposta(1);
+		gerenciador.VerificaResposta(5);
 	}
 
 
