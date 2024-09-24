@@ -24,6 +24,30 @@ public class Gerenciador
         Q1.respostacorreta= 3;
         ListaQuestoes.Add(Q1);
 
+        var Q2 = new Questao();
+        Q2.ConfigurarEstruturaDesenho(LabelPerg, btnResposta01, btnResposta02, btnResposta03, btnResposta04, btnResposta05);
+        Q2.pergunta = "Em qual continente se localiza o Egito?";
+        Q2.resposta01 = "América";
+        Q2.resposta02 = "Ásia";
+        Q2.resposta03 = "Europa";
+        Q2.resposta04 = "África";
+        Q2.resposta05 = "Oceania";
+        Q2.respostacorreta= 4;
+        ListaQuestoes.Add(Q2);
+
+        var Q3 = new Questao();
+        Q3.ConfigurarEstruturaDesenho(LabelPerg, btnResposta01, btnResposta02, btnResposta03, btnResposta04, btnResposta05);
+        Q3.pergunta = "Qual é o oceano mais profundo do mundo?";
+        Q3.resposta01 = "Atlântico";
+        Q3.resposta02 = "Índico";
+        Q3.resposta03 = "Pacífico";
+        Q3.resposta04 = "Ártico";
+        Q3.resposta05 = "Antaértico";
+        Q3.respostacorreta= 3;
+        ListaQuestoes.Add(Q3);
+
+
+
         ProximaQuestao();
 
     }

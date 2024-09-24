@@ -22,16 +22,16 @@ public class Questao
       btnResposta04.Text = resposta04;
       btnResposta05.Text = resposta05;
 
-      btnResposta01!.BackgroundColor = Colors.DarkBlue;
-      btnResposta01!.TextColor       = Colors.White;
-      btnResposta02!.BackgroundColor = Colors.DarkBlue;
-      btnResposta02!.TextColor       = Colors.White;
-      btnResposta03!.BackgroundColor = Colors.DarkBlue;
-      btnResposta03!.TextColor       = Colors.White;
-      btnResposta04!.BackgroundColor = Colors.DarkBlue;
-      btnResposta04!.TextColor       = Colors.White;
-      btnResposta05!.BackgroundColor = Colors.DarkBlue;
-      btnResposta05!.TextColor       = Colors.White;
+      btnResposta01!.BackgroundColor = Colors.Beige;
+      btnResposta01!.TextColor       = Colors.Black;
+      btnResposta02!.BackgroundColor = Colors.Beige;
+      btnResposta02!.TextColor       = Colors.Black;
+      btnResposta03!.BackgroundColor = Colors.Beige;
+      btnResposta03!.TextColor       = Colors.Black;
+      btnResposta04!.BackgroundColor = Colors.Beige;
+      btnResposta04!.TextColor       = Colors.Black;
+      btnResposta05!.BackgroundColor = Colors.Beige;
+      btnResposta05!.TextColor       = Colors.Black;
     }
 
     private Label labelPergunta; 
@@ -75,7 +75,7 @@ public class Questao
         {
             var btnCorreto = Qualbtn (respostacorreta);
             var btnIncorreto = Qualbtn (RR);
-            btnCorreto.BackgroundColor = Colors.Yellow;
+            btnCorreto.BackgroundColor = Colors.GreenYellow;
             btnIncorreto.BackgroundColor = Colors.Red;
 
             return false;
