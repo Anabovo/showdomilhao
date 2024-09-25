@@ -2,11 +2,13 @@ using showdomilhao;
 
 public class Gerenciador
 {
+    Label labelPontuacao;
+    Label labelNivel;
     List<Questao> ListaQuestoes = new List<Questao>();
     List<int> ListaQuestoesRespondidas = new List<int>();
     Questao QuestaoCorrente;
 
-    public Gerenciador(Label LabelPerg, Button btnResposta01, Button btnResposta02, Button btnResposta03, Button btnResposta04, Button btnResposta05)
+    public Gerenciador(Label LabelPerg, Button btnResposta01, Button btnResposta02, Button btnResposta03, Button btnResposta04, Button btnResposta05, Label labelPontuacao, Label labelNivel)
     {
         CriaPerguntas(LabelPerg, btnResposta01, btnResposta02, btnResposta03, btnResposta04, btnResposta05);
     }
@@ -86,6 +88,7 @@ public class Gerenciador
         Pontuacao = 0;
         NivelAtual = 1;
         ProximaQuestao();
+        ListaQuestoesRespondidas.Clear();
     }
 
     void AdicionaPontuacao(int n)

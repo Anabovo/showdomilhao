@@ -68,7 +68,7 @@ public class Questao
         if (respostacorreta == RR)
         {
             var btn = Qualbtn (RR);
-                btn.BackgroundColor = Colors.Green;
+                btn.BackgroundColor = Colors.GreenYellow;
             return true; 
         }
         else
