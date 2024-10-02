@@ -1,4 +1,4 @@
-public class Questao
+public class Questao : IEquatable<Questao>
 {
     public Questao()
     {
@@ -103,5 +103,10 @@ public class Questao
         return null;
     }
 
+    public bool Equals (Questao q )
+    { 
+        return this.nivelpergunta == q.nivelpergunta;
+    }
 
+    
 }

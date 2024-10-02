@@ -4,8 +4,8 @@ public class Gerenciador
 {
     Label labelPontuacao;
     Label labelNivel;
-    List<Questao> ListaQuestoes = new List<Questao>();
-    List<int> ListaQuestoesRespondidas = new List<int>();
+    List<Questao> ListaTodaQuestoes = new List<Questao>();
+    List<int> ListaTodaQuestoesRespondidas = new List<Questao>();
     Questao QuestaoCorrente;
 
     public Gerenciador(Label LabelPerg, Button btnResposta01, Button btnResposta02, Button btnResposta03, Button btnResposta04, Button btnResposta05, Label labelPontuacao, Label labelNivel)
@@ -24,7 +24,7 @@ public class Gerenciador
         Q1.resposta04 = "SIM";
         Q1.resposta05 = "1";
         Q1.respostacorreta= 3;
-        ListaQuestoes.Add(Q1);
+        ListaTodaQuestoes.Add(Q1);
 
         var Q2 = new Questao();
         Q2.ConfigurarEstruturaDesenho(LabelPerg, btnResposta01, btnResposta02, btnResposta03, btnResposta04, btnResposta05);
@@ -35,7 +35,7 @@ public class Gerenciador
         Q2.resposta04 = "África";
         Q2.resposta05 = "Oceania";
         Q2.respostacorreta= 4;
-        ListaQuestoes.Add(Q2);
+        ListaTodaQuestoes.Add(Q2);
 
         var Q3 = new Questao();
         Q3.ConfigurarEstruturaDesenho(LabelPerg, btnResposta01, btnResposta02, btnResposta03, btnResposta04, btnResposta05);
@@ -46,7 +46,7 @@ public class Gerenciador
         Q3.resposta04 = "Ártico";
         Q3.resposta05 = "Antaértico";
         Q3.respostacorreta= 3;
-        ListaQuestoes.Add(Q3);
+        ListaTodaQuestoes.Add(Q3);
 
 
 
@@ -72,13 +72,19 @@ public class Gerenciador
 
     void ProximaQuestao()
     {
-        var numAleat = Random.Shared.Next(0, ListaQuestoes.Count);
-        while (ListaQuestoesRespondidas.Contains(numAleat))
-              numAleat = Random.Shared.Next(0, ListaQuestoes.Count);
-        ListaQuestoesRespondidas.Add(numAleat);
-        QuestaoCorrente = ListaQuestoes[numAleat];
-        QuestaoCorrente.Desenhar();
+       var ListaTodasQuestoes = ListaTodaQuestoes.Where(d=>d.nivelpergunta==NivelCorrente).ToList();
+       var NumRand = Random.Shared.Next(0, ListaTodasQuestoes.Count - 1);
+       var NovaQuestao = ListaTodasQuestoes[numRand];
+       while (ListaTodaQuestoesRespondidas.Contains(NovaQuestao))
+       {
+          NumRand = Random.Shared.Next(0, ListaTodasQuestoes.Count - 1);
+          NovaQuestao = ListaTodasQuestoes[NumRand];
+       }
+       ListaTodaQuestoes.Add(NovaQuestao);
+       QuestaoCorrente = NovaQuestao;
+       QuestaoCorrente.Desenhar();
     }
+   
 
     public int Pontuacao{get; private set;}
     int NivelAtual=0;
@@ -88,7 +94,7 @@ public class Gerenciador
         Pontuacao = 0;
         NivelAtual = 1;
         ProximaQuestao();
-        ListaQuestoesRespondidas.Clear();
+        ListaTodaQuestoesRespondidas.Clear();
     }
 
     void AdicionaPontuacao(int n)
@@ -114,6 +120,8 @@ public class Gerenciador
          else if (n==3)  
           Pontuacao = 1000000;
     }
+
+  
 
 
 }

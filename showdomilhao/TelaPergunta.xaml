@@ -40,7 +40,7 @@
                 Grid.Column="0"
                 Grid.ColumnSpan="3">
                 
-            <Label  x:Name="Perguntas"
+            <Label  x:Name="labelPergunta"
                     TextColor="Black"
                     HorizontalOptions="Center"
                     FontSize="14"/>
