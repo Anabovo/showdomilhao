@@ -5,8 +5,10 @@ public class Gerenciador
     Label labelPontuacao;
     Label labelNivel;
     List<Questao> ListaTodaQuestoes = new List<Questao>();
-    List<int> ListaTodaQuestoesRespondidas = new List<Questao>();
+    List<Questao> ListaTodaQuestoesRespondidas = new List<Questao>();
     Questao QuestaoCorrente;
+
+    
 
     public Gerenciador(Label LabelPerg, Button btnResposta01, Button btnResposta02, Button btnResposta03, Button btnResposta04, Button btnResposta05, Label labelPontuacao, Label labelNivel)
     {
@@ -50,39 +52,39 @@ public class Gerenciador
 
 
 
-        ProximaQuestao();
+    ProximaQuestao();
 
     }
 
     public async void VerificaResposta(int RR)
     {
-        if (QuestaoCorrente.VerificaResposta(RR))
-        {
-            await Task.Delay(1000);
-            AdicionaPontuacao(NivelAtual);
-            NivelAtual ++;
-            ProximaQuestao();
-        }
-        else
-        {
-            await App.Current.MainPage.DisplayAlert ("Game Over", "Que pena... Você errou!", "OK");
-            Inicializar();
-        }
+      if (QuestaoCorrente.VerificaResposta(RR))
+      {
+        await Task.Delay(1000);
+        AdicionaPontuacao(NivelAtual);
+        NivelAtual ++;
+        ProximaQuestao();
+      }
+      else
+      {
+        await App.Current.MainPage.DisplayAlert ("Game Over", "Que pena... Você errou!", "OK");
+        Inicializar();
+      }
     }
 
-    void ProximaQuestao()
+    public void ProximaQuestao()
     {
-       var ListaTodasQuestoes = ListaTodaQuestoes.Where(d=>d.nivelpergunta==NivelCorrente).ToList();
-       var NumRand = Random.Shared.Next(0, ListaTodasQuestoes.Count - 1);
-       var NovaQuestao = ListaTodasQuestoes[numRand];
-       while (ListaTodaQuestoesRespondidas.Contains(NovaQuestao))
-       {
-          NumRand = Random.Shared.Next(0, ListaTodasQuestoes.Count - 1);
-          NovaQuestao = ListaTodasQuestoes[NumRand];
-       }
-       ListaTodaQuestoes.Add(NovaQuestao);
-       QuestaoCorrente = NovaQuestao;
-       QuestaoCorrente.Desenhar();
+      var ListaTodasQuestoes = ListaTodaQuestoes.Where(d=>d.nivelpergunta==NivelAtual).ToList();
+      var NumRand = Random.Shared.Next(0, ListaTodaQuestoes.Count);
+      var NovaQuestao = ListaTodaQuestoes[NumRand];
+      while (ListaTodaQuestoesRespondidas.Contains(NovaQuestao))
+      {
+        NumRand = Random.Shared.Next(0, ListaTodaQuestoes.Count);
+        NovaQuestao = ListaTodasQuestoes[NumRand];
+      }
+        ListaTodaQuestoes.Add(NovaQuestao);
+        QuestaoCorrente = NovaQuestao;
+        QuestaoCorrente.Desenhar();
     }
    
 
@@ -121,7 +123,13 @@ public class Gerenciador
           Pontuacao = 1000000;
     }
 
-  
+    public Questao GetQuestaoCorrente()
+    {
+      return QuestaoCorrente;
+    }
+    
+   
+
 
 
 }

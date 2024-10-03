@@ -31,4 +31,13 @@
  
         }
     }
+
+    void OnAjudaRetirarClicked(object s, EventArgs e)
+    {
+        var ajuda = new RetiraErradas();
+        ajuda.ConfiguraDesenho(Resposta01, Resposta02, Resposta03, Resposta04, Resposta05);
+        ajuda.RealizaAjuda(gerenciador.GetQuestaoCorrente());
+        gerenciador.ProximaQuestao();
+        (s as Button).IsVisible = false;
+    }
 }

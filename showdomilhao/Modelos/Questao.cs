@@ -105,7 +105,7 @@ public class Questao : IEquatable<Questao>
 
     public bool Equals (Questao q )
     { 
-        return this.nivelpergunta == q.nivelpergunta;
+        return this.nivelpergunta == q.nivelpergunta && this.pergunta == q.pergunta;
     }
 
     
