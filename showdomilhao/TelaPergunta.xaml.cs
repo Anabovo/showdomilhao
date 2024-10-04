@@ -30,14 +30,28 @@
             gerenciador!.VerificaResposta(5);
  
         }
-    }
+    
 
     void OnAjudaRetirarClicked(object s, EventArgs e)
     {
         var ajuda = new RetiraErradas();
         ajuda.ConfiguraDesenho(Resposta01, Resposta02, Resposta03, Resposta04, Resposta05);
         ajuda.RealizaAjuda(gerenciador.GetQuestaoCorrente());
+        (s as Button).IsVisible = false;
+    }
+
+    void UniversitariosClicked(object s, EventArgs e)
+    {
+        var ajuda = new Universitarios();
+        ajuda.ConfiguraDesenho(Resposta01, Resposta02, Resposta03, Resposta04, Resposta05);
+        ajuda.RealizaAjuda(gerenciador.GetQuestaoCorrente());
+        (s as Button).IsVisible = false;
+    }
+
+    void PularQuestaoClicked (object s, EventArgs e)
+    {
         gerenciador.ProximaQuestao();
         (s as Button).IsVisible = false;
+    }
     }
 }

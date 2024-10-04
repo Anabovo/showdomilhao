@@ -101,8 +101,8 @@
                 Grid.ColumnSpan="3"
                 Clicked="Resposta05Clicado"/>
 
-        <Button x:Name="Ajuda01"
-                Text="Cartas"
+        <Button Clicked="PularQuestaoClicked"
+                Text="Pular Questão"
                 BackgroundColor="Beige"
                 TextColor="Black"
                 Grid.Row="7"
@@ -110,8 +110,8 @@
                 Margin="5,0"
                 CornerRadius="15"/>
 
-        <Button x:Name="Ajuda02"
-                Text="Eliminar 1"
+        <Button Text="Retirar 3"
+                Clicked="OnAjudaRetirarClicked"
                 BackgroundColor="Beige"
                 TextColor="Black"
                 Grid.Row="7"
@@ -119,7 +119,7 @@
                 Margin="5,0"
                 CornerRadius="15"/>
 
-        <Button x:Name="Ajuda03"
+        <Button Clicked="UniversitariosClicked"
                 Text="Universitários"
                 FontSize="12"
                 BackgroundColor="Beige"
