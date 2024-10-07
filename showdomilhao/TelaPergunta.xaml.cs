@@ -48,10 +48,18 @@
         (s as Button).IsVisible = false;
     }
 
+    int pulou=1;
+
     void PularQuestaoClicked (object s, EventArgs e)
     {
         gerenciador.ProximaQuestao();
-        (s as Button).IsVisible = false;
+        if (pulou == 3)
+           (s as Button).IsVisible = false;
+        else
+        {
+            gerenciador.ProximaQuestao();
+            pulou++;
+        }
     }
     }
 }
