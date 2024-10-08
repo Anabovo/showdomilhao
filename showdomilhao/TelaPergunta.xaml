@@ -102,7 +102,7 @@
                 Clicked="Resposta05Clicado"/>
 
         <Button Clicked="PularQuestaoClicked"
-                Text="Pular 1"
+                Text="Pular: 1"
                 BackgroundColor="Beige"
                 TextColor="Black"
                 Grid.Row="7"
@@ -111,7 +111,7 @@
                 CornerRadius="15"/>
 
         <Button Clicked="PularQuestao"
-                Text="Pular 2"
+                Text="Pular: 2"
                 BackgroundColor="Beige"
                 TextColor="Black"
                 Grid.Row="7"
@@ -120,7 +120,7 @@
                 CornerRadius="15"/>
    
         <Button Clicked="PularQuestao2"
-                Text="Pular 3"
+                Text="Pular: 3"
                 BackgroundColor="Beige"
                 TextColor="Black"
                 Grid.Row="7"
